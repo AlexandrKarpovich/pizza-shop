@@ -1,4 +1,4 @@
-# Pizza shop
+# Pizza shop  (Node + React + TS + Mongo db + docker)
 
 ## [Backend docs](https://github.com/AlexandrKarpovich/pizza-shop/blob/master/backend/README.md)
 

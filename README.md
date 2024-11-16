@@ -4,20 +4,30 @@
 
 ## [Frontend docs](https://github.com/AlexandrKarpovich/pizza-shop/blob/master/frontend/README.md)
 
+[//]: # ()
+[//]: # (Сборка и запуск)
 
-Сборка и запуск
-Соберите контейнеры:
-docker-compose build
+[//]: # (Соберите контейнеры:)
 
-Запустите сервисы:
-docker-compose up
+[//]: # (docker-compose build)
 
-Что будет работать:
-Backend: доступен по адресу http://localhost:5000.
-Frontend: доступен по адресу http://localhost:3000.
-MongoDB: доступен по адресу mongodb://localhost:27017.
-Примечание:
-Если фронтенд использует бекенд, убедитесь, что API-адрес настроен на http://localhost:5000 (или используйте переменные окружения).
+[//]: # ()
+[//]: # (Запустите сервисы:)
+
+[//]: # (docker-compose up)
+
+[//]: # ()
+[//]: # (Что будет работать:)
+
+[//]: # (Backend: доступен по адресу http://localhost:5000.)
+
+[//]: # (Frontend: доступен по адресу http://localhost:3000.)
+
+[//]: # (MongoDB: доступен по адресу mongodb://localhost:27017.)
+
+[//]: # (Примечание:)
+
+[//]: # (Если фронтенд использует бекенд, убедитесь, что API-адрес настроен на http://localhost:5000 &#40;или используйте переменные окружения&#41;.)
 
 
 ![](https://github.com/AlexandrKarpovich/pizza-shop/blob/master/frontend/public/Screenshot%202024-11-17%20005648.png)

@@ -20,4 +20,4 @@ MongoDB: доступен по адресу mongodb://localhost:27017.
 Если фронтенд использует бекенд, убедитесь, что API-адрес настроен на http://localhost:5000 (или используйте переменные окружения).
 
 
-![](https://github.com/AlexandrKarpovich/Pizza-shop/blob/main/frontend/public/Screenshot 2024-11-17 005648.png)
+![](https://github.com/AlexandrKarpovich/pizza-shop/blob/master/frontend/public/Screenshot%202024-11-17%20005648.png)

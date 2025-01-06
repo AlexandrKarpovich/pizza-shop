@@ -1,28 +1,31 @@
-import React, {useContext, useEffect, useState} from 'react';
+import {useContext, useEffect, useState} from 'react';
 import Categories from "../components/Categories";
 import Sort from "../components/Sort";
 import {useDispatch, useSelector} from "react-redux";
-import { setCategoryId } from "../redux/slices/filterSlices"
+import { setCategoryId, setCurrentPage } from "../redux/slices/filterSlices"
 import Skeleton from "../components/pizzaBlock/Skeleton";
 import PizzaBlock from "../components/pizzaBlock";
 import Pagination from "../components/Pagination";
 import {SearchContext} from "../App";
+import axios from "axios";
 
 
 const Home = () => {
     const dispatch = useDispatch()
-    const {categoryId, sort} = useSelector((state) => state.filter)
+    const {categoryId, sort, currentPage } = useSelector((state) => state.filter)
     const sortType = sort.sortProperty
 
     const {searchValue} = useContext(SearchContext)
 
     const [items, setItems] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
-    const [currentPage, setCurrentPage] = useState(1)
 
     const onChangeCategory = (id) => {
         // console.log(id)
         dispatch(setCategoryId(id))
+    }
+    const onChangePage = (number) => {
+        dispatch(setCurrentPage(number))
     }
 
     // console.log(sortType)
@@ -48,8 +51,23 @@ const Home = () => {
                 console.error('Ошибка загрузки данных:', error);
                 setIsLoading(false);
             });
+
+        // axios.get(`https://6733ad38a042ab85d117a401.mockapi.io/items?page=${currentPage}&limit=4&${category}&sortBy=${sort}&order=${order}${search}`)
+        //     .then(res => {
+        //         setItems(res.data);
+        //         // console.log(res.data)
+        //     })
+        //     .catch((error) => {
+        //         console.error('Ошибка загрузки данных:', error);
+        //     })
+        //     .finally( () => {
+        //         setIsLoading(false);
+        //     });
         window.scrollTo(0, 0)
+
     }, [categoryId, sortType, searchValue, currentPage])
+
+
 
     const skeletons = [...new Array(6)].map((_, index) => <Skeleton key={index} />)
     const pizzas = items
@@ -78,7 +96,7 @@ const Home = () => {
                     <p>В данной категории пицц нет.</p>
                 )}
             </div>
-            <Pagination onChangePage={(number) => setCurrentPage(number)} />
+            <Pagination currentPage={currentPage} onChangePage={onChangePage} />
         </div>
     );
 };

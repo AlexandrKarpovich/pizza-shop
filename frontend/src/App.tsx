@@ -6,7 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import Cart from "./pages/Cart";
 // import "./css/app.css"
 import "./scss/app.scss"
-import React, {createContext, useState} from "react";
+import {createContext, useState} from "react";
 
 export const SearchContext = createContext();
 

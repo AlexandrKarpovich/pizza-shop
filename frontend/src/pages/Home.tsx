@@ -4,7 +4,7 @@ import Categories from "../components/Categories";
 import Sort, {sortList} from "../components/Sort";
 import {useDispatch, useSelector} from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setCategoryId, setCurrentPage, setFilters } from "../redux/slices/filterSlices"
+import { setCategoryId, setCurrentPage, setFilters } from "../redux/slices/filterSlice"
 import Skeleton from "../components/pizzaBlock/Skeleton";
 import PizzaBlock from "../components/pizzaBlock";
 import Pagination from "../components/Pagination";
